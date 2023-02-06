@@ -1,8 +1,7 @@
-import React, { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import style from './App.module.scss';
 import Card from './components/Card';
 import Formulario from './components/Formulario';
-import { IEvento } from './interfaces/IEvento';
 import Calendario from './components/Calendario';
 import ListaDeEventos from './components/ListaDeEventos';
 import { RecoilRoot } from 'recoil';

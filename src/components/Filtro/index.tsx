@@ -7,17 +7,23 @@ import style from './Filtro.module.scss';
 const Filtro: React.FC = () => {
 
   const [data, setData] = useState('')
-  // const [estado, setEstado] = useState<"ambos" | "incompletos" | "completos">("ambos");
+  const [status, setStatus] = useState('')
   const setFiltroDeEventos = useSetRecoilState<IFIltroDeEventos>(filtroDeEventos)
 
   const submeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault()
     const filtro: IFIltroDeEventos = {}
     if (data) {
-      filtro.data = new Date(data)
+      filtro.data = new Date(data);
     } else {
-      filtro.data = null
+      filtro.data = null;
     }
+    if (status) {
+      filtro.status = status;
+    } else {
+      filtro.status = 'todas';
+    }
+
     setFiltroDeEventos(filtro);
   }
 
@@ -34,21 +40,16 @@ const Filtro: React.FC = () => {
       <button className={style.botao}>
         Filtrar
       </button>
-      {/* <div>
-        <h3>Filtrar por estado:</h3>
-        <label>
-          Ambos:
-          <input type="radio" name="estado" />
-        </label>
-        <label>
-          Completos:
-          <input type="radio" name="estado" />
-        </label>
-        <label>
-          Incompletos:
-          <input type="radio" name="estado" />
-        </label>
-      </div> */}
+      <h3 className={style.titulo}>Filtrar por status</h3>
+    <select 
+      name="status"
+      onChange={evento => {setStatus(evento.target.value)}}
+      value={status}
+    >
+      <option value="todas">Todas</option>
+      <option value="completas">Completas</option>
+      <option value="incompletas">Incompletas</option>
+    </select>
     </form>)
 }
 
