@@ -7,7 +7,7 @@ import style from './Filtro.module.scss';
 const Filtro: React.FC = () => {
 
   const [data, setData] = useState('')
-  const [estado, setEstado] = useState<"ambos" | "incompletos" | "completos">("ambos");
+  // const [estado, setEstado] = useState<"ambos" | "incompletos" | "completos">("ambos");
   const setFiltroDeEventos = useSetRecoilState<IFIltroDeEventos>(filtroDeEventos)
 
   const submeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
@@ -34,7 +34,7 @@ const Filtro: React.FC = () => {
       <button className={style.botao}>
         Filtrar
       </button>
-      <div>
+      {/* <div>
         <h3>Filtrar por estado:</h3>
         <label>
           Ambos:
@@ -48,7 +48,7 @@ const Filtro: React.FC = () => {
           Incompletos:
           <input type="radio" name="estado" />
         </label>
-      </div>
+      </div> */}
     </form>)
 }
 

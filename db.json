@@ -1,0 +1,16 @@
+{
+	"eventos": [{
+		"descricao": "Estudar React",
+		"inicio": "2023-02-15T09:00",
+		"fim": "2023-02-15T13:00",
+		"completo": false,
+		"id": 101
+	},
+	{
+		"descricao": "Estudar Recoil",
+		"inicio": "2023-02-16T09:00",
+		"fim": "2023-02-16T11:00",
+		"completo": false,
+		"id": 102
+	}]
+}
